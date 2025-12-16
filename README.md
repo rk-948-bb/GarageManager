@@ -77,7 +77,7 @@ Feel free to open Issues or Pull Requests for improvements, bug fixes, or new fe
 ---
 
 ## Credits
-- Development: [rivka kirshtein]
+- Development: rivka kirshtein
 
 ---
 
