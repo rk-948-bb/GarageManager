@@ -1,0 +1,52 @@
+<div style="max-width: 900px; margin: 0 auto;">
+	<h2>Garage Manager</h2>
+
+	<div *ngIf="loading" style="text-align:center;">
+		<mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+	</div>
+
+	<mat-form-field style="width: 100%; margin-bottom: 16px;">
+		<mat-label>Select garages from government API</mat-label>
+		<mat-select multiple [(value)]="selectedGarages">
+			<mat-option *ngFor="let garage of garagesFromGov" [value]="garage">
+				{{ garage.name || garage.Name || garage._id || 'No Name' }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<button mat-raised-button color="primary" (click)="addSelectedGarages()" [disabled]="selectedGarages.length === 0 || loading || allSelectedExist()">
+		Add Selected Garages
+	</button>
+
+	<hr>
+
+	<h3>Garages in Database</h3>
+	<table mat-table [dataSource]="garagesFromDb" class="mat-elevation-z8" style="width: 100%;">
+		<ng-container matColumnDef="name">
+			<th mat-header-cell *matHeaderCellDef>Name</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.name || garage.Name || garage._id || 'No Name' }}</td>
+		</ng-container>
+		<ng-container matColumnDef="address">
+			<th mat-header-cell *matHeaderCellDef>Address</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.address || garage.Address || '-' }}</td>
+		</ng-container>
+		<ng-container matColumnDef="telephone">
+			<th mat-header-cell *matHeaderCellDef>Telephone</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.telephone || garage.Telephone || '-' }}</td>
+		</ng-container>
+		<ng-container matColumnDef="mikud">
+			<th mat-header-cell *matHeaderCellDef>Zip</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.mikud || garage.Mikud || '-' }}</td>
+		</ng-container>
+		<ng-container matColumnDef="externalId">
+			<th mat-header-cell *matHeaderCellDef>External ID</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.externalId || '-' }}</td>
+		</ng-container>
+		<ng-container matColumnDef="id">
+			<th mat-header-cell *matHeaderCellDef>ID</th>
+			<td mat-cell *matCellDef="let garage">{{ garage.id || garage._id || '-' }}</td>
+		</ng-container>
+		<tr mat-header-row *matHeaderRowDef="['name', 'address', 'telephone', 'mikud', 'externalId', 'id']"></tr>
+		<tr mat-row *matRowDef="let row; columns: ['name', 'address', 'telephone', 'mikud', 'externalId', 'id'];"></tr>
+	</table>
+</div>

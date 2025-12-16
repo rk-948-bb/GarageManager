@@ -1,0 +1,113 @@
+/* עיצוב מודרני, מרווח ונעים לממשק Garage Manager */
+
+body, :host {
+	background: #f7f8fa;
+}
+
+div[style*="max-width"] {
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+	padding: 36px 32px 32px 32px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+h2 {
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 28px;
+	color: #22223b;
+	letter-spacing: 0.5px;
+}
+
+mat-form-field {
+	background: #f3f4f6;
+	border-radius: 10px;
+	margin-bottom: 24px !important;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+}
+
+mat-select {
+	font-size: 1.08rem;
+}
+
+button[mat-raised-button] {
+	margin-bottom: 18px;
+	margin-top: 4px;
+	font-size: 1.08rem;
+	font-weight: 600;
+	border-radius: 8px;
+	min-width: 180px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+
+hr {
+	margin: 32px 0 18px 0;
+	border: none;
+	border-top: 1.5px solid #e0e0e0;
+}
+
+h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 18px;
+	color: #3a3a40;
+}
+
+table.mat-table {
+	background: #f9f9fb;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+th.mat-header-cell, td.mat-cell {
+	font-size: 1.08rem;
+	padding: 14px 12px;
+}
+
+th.mat-header-cell {
+	background: #e9eaf0;
+	color: #22223b;
+	font-weight: 700;
+	border-bottom: 2px solid #d1d1e0;
+}
+
+td.mat-cell {
+	color: #44445a;
+	border-bottom: 1px solid #ececf2;
+}
+
+tr.mat-header-row, tr.mat-row {
+	transition: background 0.2s;
+}
+tr.mat-row:hover {
+	background: #f1f3fa;
+}
+
+mat-progress-spinner {
+	margin: 24px auto 18px auto;
+	display: block;
+}
+
+@media (max-width: 700px) {
+	div[style*="max-width"] {
+		padding: 18px 4vw 18px 4vw;
+	}
+	h2 {
+		font-size: 1.4rem;
+	}
+	h3 {
+		font-size: 1.08rem;
+	}
+	th.mat-header-cell, td.mat-cell {
+		font-size: 0.98rem;
+		padding: 8px 4px;
+	}
+	button[mat-raised-button] {
+		min-width: 120px;
+		font-size: 0.98rem;
+	}
+}
